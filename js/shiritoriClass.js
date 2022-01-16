@@ -7,12 +7,13 @@ class Shiritori {
   }
 
   play(word) {
-    let len = this.words.length - 1;
-    let wordLen = this.words[len].length;
-    let lastLetter = this.words[len][wordLen];
     if (this.words.length === 0) {
       this.words.push(word);
-    } else if (lastLetter === word[0]) {
+    } else if (
+      this.words[this.words.length - 1][
+        this.words[this.words.length - 1].length - 1
+      ] === word[0]
+    ) {
       this.words.push(word);
     } else {
       console.log("game over");
@@ -26,8 +27,8 @@ class Shiritori {
 const myShiritori = new Shiritori();
 myShiritori.play("apple");
 myShiritori.play("ear");
-myShiritori.play("rhino");
-myShiritori.play("corn");
+// myShiritori.play("rhino");
+// myShiritori.play("corn");
 console.log(myShiritori.words);
 myShiritori.restart();
 console.log(myShiritori.words);
