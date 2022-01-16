@@ -7,13 +7,12 @@ class Shiritori {
   }
 
   play(word) {
+    let len = this.words.length - 1;
+    let wordLen = this.words[len].length;
+    let lastLetter = this.words[len][wordLen];
     if (this.words.length === 0) {
       this.words.push(word);
-    } else if (
-      this.words[this.words.length - 1][
-        this.words[this.words.length - 1].length - 1
-      ] === word[0]
-    ) {
+    } else if (lastLetter === word[0]) {
       this.words.push(word);
     } else {
       console.log("game over");
@@ -36,4 +35,3 @@ myShiritori.play("hostess");
 myShiritori.play("stash");
 myShiritori.play("hostess");
 console.log(myShiritori.words);
-// debugger;

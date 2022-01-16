@@ -20,4 +20,5 @@ const myConsole = new Console("Regular");
 const fancyConsole = new Console("Fancy");
 // console.log(myConsole.log("ok : ", 1, 2, 3));
 console.log(myConsole.log([0, 1, 2, 3])); // "Regular: [0,1,2,3]"
+console.log(myConsole.log(5));
 console.log(fancyConsole.log({ a: 1, b: 2 })); // "Fancy: {a:1, b:2}"
